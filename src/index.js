@@ -6,9 +6,12 @@ const delay = ms => new Promise(res => setTimeout(() => res(ms), ms));
 
 const logger = time => console.log(`Resolved after ${time}ms`);
 
-// delay(2000).then(logger);
-// delay(1000).then(logger);
-// delay(1500).then(logger);
+// ✅ Console checks
+document.querySelector('.js-task1').addEventListener('click', () => {
+  delay(2000).then(logger);
+  delay(1000).then(logger);
+  delay(1500).then(logger);
+});
 
 // ==================== 📌 TASK 2 ====================
 
@@ -24,8 +27,11 @@ const toggleUserState = (allUsers, userName) => {
 
 const logger2 = updatedUsers => console.table(updatedUsers);
 
-// toggleUserState(users, 'Mango').then(logger2);
-// toggleUserState(users, 'Lux').then(logger2);
+// ✅ Console checks
+document.querySelector('.js-task2').addEventListener('click', () => {
+  toggleUserState(users, 'Mango').then(logger2);
+  toggleUserState(users, 'Lux').then(logger2);
+});
 
 // ==================== 📌 TASK 3 ====================
 
@@ -56,7 +62,10 @@ const logError = id => {
   console.warn(`Error processing transaction ${id}. Please try again later.`);
 };
 
-// makeTransaction({ id: 70, amount: 150 }).then(logSuccess).catch(logError);
-// makeTransaction({ id: 71, amount: 230 }).then(logSuccess).catch(logError);
-// makeTransaction({ id: 72, amount: 75 }).then(logSuccess).catch(logError);
-// makeTransaction({ id: 73, amount: 100 }).then(logSuccess).catch(logError);
+// ✅ Console checks
+document.querySelector('.js-task3').addEventListener('click', () => {
+  makeTransaction({ id: 70, amount: 150 }).then(logSuccess).catch(logError);
+  makeTransaction({ id: 71, amount: 230 }).then(logSuccess).catch(logError);
+  makeTransaction({ id: 72, amount: 75 }).then(logSuccess).catch(logError);
+  makeTransaction({ id: 73, amount: 100 }).then(logSuccess).catch(logError);
+});
